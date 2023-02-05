@@ -619,7 +619,7 @@ for k in range(3):
             
             for i in range(iterations):
                 #print(env.CombinationMatrix)
-                plt.rcParams["figure.figsize"] = (10,10)    
+                plt.rcParams["figure.figsize"] = (20,20)    
                 if (k == 2):
                     print("Centr: CD, iter", i, "exp", m)
                     env.step(j, centralizedtraining = 2)
