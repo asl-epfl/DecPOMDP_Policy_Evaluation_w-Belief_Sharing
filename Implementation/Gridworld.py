@@ -332,10 +332,10 @@ class GridWorld:
     def Render(self): 
          
         fig, ax = plt.subplots()
-        plt.rcParams["figure.figsize"] = (5,3)
+        plt.rcParams["figure.figsize"] = (10,10)
         xy = (0.5,0.5)
         arr_img = plt.imread("background.jpg")
-        imagebox = OffsetImage(arr_img, zoom=0.3)
+        imagebox = OffsetImage(arr_img, zoom=1)
         imagebox.image.axes = ax
         ab = AnnotationBbox(imagebox, xy,frameon = False)
 
@@ -344,46 +344,42 @@ class GridWorld:
             temp_x = L.posx
             temp_y = L.posy
             xy = (temp_x/self.width ,(temp_y)/self.height)
-            arr_img = plt.imread("airplane.png")
-            imagebox = OffsetImage(arr_img, zoom=0.2)
-            #imagebox = OffsetImage(arr_img, zoom=0.45)
+            arr_img = plt.imread("satellite.png")
+            imagebox = OffsetImage(arr_img, zoom=0.3) 
             imagebox.image.axes = ax
 
             ab = AnnotationBbox(imagebox, xy,frameon = False)
 
             ax.add_artist(ab) 
-            
+
         temp_x = self.jointaction[0]/self.height
-        temp_y = self.jointaction[1]/self.width
+        temp_y = (self.jointaction[1] )/self.width
 
         xy = (temp_x,temp_y)
         arr_img = plt.imread("shot.png")
 
-        imagebox = OffsetImage(arr_img, zoom=0.2)
+        imagebox = OffsetImage(arr_img, zoom=0.3)
         imagebox.image.axes = ax
 
         ab = AnnotationBbox(imagebox, xy,frameon = False)
 
         ax.add_artist(ab)
-        ax.axis('off')
-
-
+        ax.axis('off') 
         temp_x = self.target_posx/self.height
-        temp_y = (self.target_posy)/self.width
+        temp_y = (self.target_posy )/self.width
 
         xy = (temp_x,temp_y)
-        arr_img = plt.imread("UFO.png")
-        imagebox = OffsetImage(arr_img, zoom=0.3)
-        imagebox.image.axes = ax
-        
+        arr_img = plt.imread("drone.png")
+        imagebox = OffsetImage(arr_img, zoom=1) 
+        imagebox.image.axes = ax 
         ab = AnnotationBbox(imagebox, xy,frameon = False)
         ax.set_xlim(0, 1)
         ax.set_ylim(0, 1)
         ax.add_artist(ab)
-        ax.axis('off')
-        
+        ax.axis('off') 
+
+        plt.rcParams["figure.figsize"] = (10,10)
         fig.savefig("render.jpg",dpi = 300)
-        
         plt.close(fig)
         time.sleep(10) 
         return 
@@ -548,12 +544,12 @@ class GridWorld:
             
         return r
 
-
-x = []
+ 
+beliefvectors = []
+#Parameters
 height = 10
 width  = height
-num = 9
-beliefvectors = []
+num = 8
 iterations = 12001
 experiments = 7
 rho = 0.0001
@@ -564,7 +560,7 @@ np.random.seed(200)
 
 keyword = str(num) + "_height_" + str(height) +  "_iterations_" + str(iterations)+ "_rho_" + str(rho) + "phi"+ str(phi) + "_exp_"+str(experiments)+"_alpha_" +str(alpha)
 
-#belief Vectors
+#Belief Vectors
 for i in range(100000):
         r = [random.randint(1,100) for w in range(0, height*width)]
         s = sum(r)
@@ -618,10 +614,10 @@ for k in range(3):
             
         #for more than 1 monte carlo experiment
         for m in range(experiments):  
-
+            
             for i in range(iterations):
                 #print(env.CombinationMatrix)
-                
+                plt.rcParams["figure.figsize"] = (10,10)    
                 if (k == 2):
                     print("Centr: CD, iter", i, "exp", m)
                     env.step(j, centralizedtraining = 2)
@@ -651,14 +647,12 @@ for k in range(3):
                 if i%100== 0:
                     data = env.Errorhistory[-100:]
                     with open('AgreementErrorHISTORY'+ d +'-'+str(k)+'-'+str(m)+'.csv', 'a', encoding="ISO-8859-1", newline='') as file:
-                        write = csv.writer(file)
-                        #write.writerow("S")
+                        write = csv.writer(file) 
                         write.writerows(map(lambda x: [x], data))
 
                     data = env.sbehistory[-100:]
                     with open('SBEHISTORY'+ d +'-'+str(k)+'-'+str(m)+'.csv', 'a', encoding="ISO-8859-1", newline='') as file:
-                        write = csv.writer(file)
-                        #write.writerow("S")
+                        write = csv.writer(file) 
                         write.writerows(map(lambda x: [x], data))
             
                 
