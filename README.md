@@ -54,7 +54,8 @@ Use `step(centralized)` method from the Gridworld class to get the next time ste
 ### Render
 Use the `Render()` method from the Gridworld class to visualize the actions of the agents and the transition of the target in the environment. As rendered below, the agents are represented by military airplanes. These airplanes shoot the enemy UFO (the moving target) as it transitions around the grid.  
 
- ![render](https://user-images.githubusercontent.com/80005419/215314003-7877b10d-ab1d-4c36-aa72-afd11440545b.jpg)
+ ![render]()![render](https://user-images.githubusercontent.com/80005419/216821230-b34cc2aa-1057-4bd9-a650-4f15bfa90226.jpg)
+
 
 
 
