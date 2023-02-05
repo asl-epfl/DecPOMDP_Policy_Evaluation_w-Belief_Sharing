@@ -332,10 +332,10 @@ class GridWorld:
     def Render(self): 
          
        fig, ax = plt.subplots()
-        plt.rcParams["figure.figsize"] = (9,9)
+        plt.rcParams["figure.figsize"] = (20,20)
         xy = (0.5,0.5)
         arr_img = plt.imread("background.jpg")
-        imagebox = OffsetImage(arr_img, zoom=1)
+        imagebox = OffsetImage(arr_img, zoom=2.05)
         imagebox.image.axes = ax
         ab = AnnotationBbox(imagebox, xy,frameon = False)
 
@@ -343,17 +343,18 @@ class GridWorld:
         for L in self.ListofAgents:
             temp_x = L.posx
             temp_y = L.posy
-            xy = ((temp_x)/self.width ,(temp_y)/self.height)
+            xy = ((temp_x-0.5)/self.width ,(temp_y-0.5)/self.height)
             arr_img = plt.imread("satellite.png")
             imagebox = OffsetImage(arr_img, zoom=0.4) 
             imagebox.image.axes = ax
 
-            ab = AnnotationBbox(imagebox, xy,frameon = False)
+            ab = AnnotationBbox(imagebox, xy, xycoords = 'figure fraction',frameon = False)
 
             ax.add_artist(ab) 
+ 
 
-        temp_x = self.jointaction[0]/self.height
-        temp_y = (self.jointaction[1] )/self.width
+        temp_x = (self.jointaction[0]-0.5)/self.height
+        temp_y = (self.jointaction[1] -0.5)/self.width
 
         xy = (temp_x,temp_y)
         arr_img = plt.imread("signal.png")
@@ -361,28 +362,29 @@ class GridWorld:
         imagebox = OffsetImage(arr_img, zoom=0.4)
         imagebox.image.axes = ax
 
-        ab = AnnotationBbox(imagebox, xy,frameon = False)
+        ab = AnnotationBbox(imagebox, xy, xycoords = 'figure fraction',frameon = False)
 
         ax.add_artist(ab)
         ax.axis('off') 
-        temp_x = self.target_posx/self.height
-        temp_y = (self.target_posy )/self.width
+        
+        temp_x = (self.target_posx-0.5)/self.height
+        temp_y = (self.target_posy-0.5 )/self.width
 
         xy = (temp_x,temp_y)
         arr_img = plt.imread("drone.png")
         imagebox = OffsetImage(arr_img, zoom=1) 
         imagebox.image.axes = ax 
-        ab = AnnotationBbox(imagebox, xy,frameon = False)
+        ab = AnnotationBbox(imagebox, xy,xycoords = 'figure fraction',frameon = False)
         ax.set_xlim(0, 1)
         ax.set_ylim(0, 1)
         ax.add_artist(ab)
         ax.axis('off') 
 
-        plt.rcParams["figure.figsize"] = (10,10)
+        plt.rcParams["figure.figsize"] = (20,20)
         fig.savefig("render.jpg",dpi = 300)
         plt.close(fig)
         time.sleep(10) 
-        return
+        return 
     
     def reset(self,centralized): 
         print("reset")
