@@ -20,7 +20,7 @@ POMDPs with Belief Sharing](https://arxiv.org/).
 Use the following function to create a new environment: 
 
 `
-env = GridWorld(num = num, height = height, width = width, centralized = centralized, noisy = noisy, rho = rho, phi = phi, sparse = True, alpha = alpha, beliefvectors = beliefvectors)
+env = GridWorld(num, height, width, centralized, noisy, rho, phi, sparse, alpha, beliefvectors)
 `
  - `num`: number of agents in the grid
  - `height` : height of the grid (number of cells)
