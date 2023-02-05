@@ -1,6 +1,6 @@
 # Policy Evaluation in Decentralized POMDPs with Belief Sharing.
 
-Multi-agent grid world environment with partial observability and a discrete action space. In this environment, agents (e.g., military drones belonging to humankind) exploit their communication network in order to track a moving target (e.g., an UFO belonging to a malicious alien civilization). The target moves randomly according to a pre-defined transition model that takes the actions (i.e., hits) of agents into account. 
+Multi-agent grid world environment with partial observability and a discrete action space. In this environment, agents (e.g., satellites) exploit their communication network in order to track a moving target (e.g., intruder dine). The target moves randomly according to a pre-defined transition model that takes the actions (i.e., hits) of agents into account. 
 
 Used in the paper [Policy Evaluation in Decentralized
 POMDPs with Belief Sharing](https://arxiv.org/).
