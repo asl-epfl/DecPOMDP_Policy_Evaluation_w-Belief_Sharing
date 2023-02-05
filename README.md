@@ -52,11 +52,11 @@ Use `step(centralized)` method from the Gridworld class to get the next time ste
 - SBE Error
 
 ### Render
-Use the `Render()` method from the Gridworld class to visualize the actions of the agents and the transition of the target in the environment. As rendered below, the agents are represented by military airplanes. These airplanes shoot the enemy UFO (the moving target) as it transitions around the grid.  
+Use the `Render()` method from the Gridworld class to visualize the actions of the agents and the transition of the target in the environment. As rendered below, the agents are represented by sensors (satellites). These satellites aim to localize a spy drone as it transitions around the grid.  Actions taken by the satellites are represented as noisy signals that aim to disrupt the communication between the intruder and its owner.
 
- ![render](https://user-images.githubusercontent.com/80005419/216823727-f05b4ec2-c8ee-43c7-b58d-6c9c60a88035.jpg =250x250)
-
-
+<p align="center">
+<img src = "https://user-images.githubusercontent.com/80005419/216824175-30056460-fd53-40a7-8e33-7d8b800c1631.jpg" width="500" height="500">
+</p>
 
 ## Paper citation
 
@@ -65,7 +65,7 @@ If you used this environment for your experiments or found it helpful, consider 
 <pre>
 @article{,
   title={Policy Evaluation in Decentralized POMDPs with Belief Sharing},
-  author={},
+  author={M. Kayaalp, F. Ghadieh, and A. H. Sayed},
   journal={},
   year={2023}
 }
