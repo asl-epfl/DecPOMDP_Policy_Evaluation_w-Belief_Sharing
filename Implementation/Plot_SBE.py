@@ -12,21 +12,58 @@ mpl.rcParams['font.family'] = 'serif'
 
 from scipy.signal import lfilter
 
-y = pd.read_csv('SBEHISTORY9-10__DD__Agents9_height_10_iterations_12001_rho_0.0001phi1_exp_3_alpha_0.1-1-0.csv')
-y = pd.DataFrame(y)
-y = y.iloc[:,0]
+ya = pd.read_csv('DD_SBE_0.csv',header = None)
+yb = pd.read_csv('DD_SBE_1.csv',header = None)
+yc = pd.read_csv('DD_SBE_2.csv',header = None)
+ 
+ya = pd.DataFrame(ya)
+yb = pd.DataFrame(yb)
+yc = pd.DataFrame(yc)
 
-y3 = pd.read_csv('SBEHISTORY9-10__CC__Agents9_height_10_iterations_12001_rho_0.0001phi1_exp_3_alpha_0.1-0-0.csv')
-y3 = pd.DataFrame(y3)
-y3 = y3.iloc[:,0]
+ya[1] = yb[0]
+ya[2] = yc[0]
+ya[3] = ya.mean(axis = 1)
 
-y2 = pd.read_csv('SBEHISTORY9-10__CD__Agents9_height_10_iterations_12001_rho_0.0001phi1_exp_3_alpha_0.1-2-0.csv')
-y2 = pd.DataFrame(y2)
-y2 = y2.iloc[:,0]
+y = ya.iloc[:,3]
+
+
+ya = pd.read_csv('CC_SBE_0.csv',header = None)
+yb = pd.read_csv('CC_SBE_1.csv',header = None)
+yc = pd.read_csv('CC_SBE_2.csv',header = None)
+ 
+ya = pd.DataFrame(ya)
+yb = pd.DataFrame(yb)
+yc = pd.DataFrame(yc)
+
+ya[1] = yb[0]
+ya[2] = yc[0]
+ya[3] = ya.mean(axis = 1)
+
+y3 = ya.iloc[:,3] 
+
+
+ya = pd.read_csv('CD_SBE_0.csv',header = None)
+yb = pd.read_csv('CD_SBE_1.csv',header = None) 
+yc = pd.read_csv('CD_SBE_2.csv',header = None) 
+ 
+ya = pd.DataFrame(ya)
+yb = pd.DataFrame(yb) 
+yc = pd.DataFrame(yb) 
+ya[1] = yb[0] 
+ya[2] = yc[0]
+ya[3] = ya.mean(axis = 1)
+
+y2 = ya.iloc[:,3] 
+ 
  
 v = y.ewm(alpha=0.025).mean() 
+y = y.rolling(20).mean()
+
 v2 = y2.ewm(alpha=0.025).mean()
+y2 = y2.rolling(20).mean()
+
 v3 = y3.ewm(alpha=0.025).mean()
+y3 = y3.rolling(20).mean()
  
 plt.rcParams["figure.figsize"] = (40,10)
 fiii, ax = plt.subplots(1,1)
@@ -39,13 +76,13 @@ ax.set_axisbelow(False)
 plt.rc('axes', axisbelow=False) 
 
 ax.plot(v, color = 'blue', label = r'Diffusion')
-ax.plot(y, color = 'blue',alpha = 0.3, linewidth = 2)
+ax.plot(y, color = 'blue',alpha = 0.2, linewidth = 2)
 
 ax.plot(v2, color = 'green', label = r' CD')
-ax.plot(y2, color = 'green',alpha = 0.3, linewidth = 2)
+ax.plot(y2, color = 'green',alpha = 0.2, linewidth = 2)
 
 ax.plot(v3, color = 'red', label = r'CC')
-ax.plot(y3, color = 'red',alpha = 0.3, linewidth = 2)
+ax.plot(y3, color = 'red',alpha = 0.2, linewidth = 2)
 
  
 ax.set_xlabel(r'$i$', fontsize=24) 
@@ -56,6 +93,7 @@ plt.xticks(fontsize=24)
 
 ax.set_yscale('log')
 plt.style.use(['science','ieee'])
+plt.ylim(top=100)
 
 fiii.subplots_adjust(bottom=0.2)
 fiii.subplots_adjust(left=-0.1)
