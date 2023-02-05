@@ -63,7 +63,7 @@ the agents are from each other, the less is the weight assignedto the edge conne
 
   - **Procedure**:
 
-    1- Updates `transition_matrix` by calling function *transition_matrix_fn* with input action a
+    1- Updates `transition_matrix` by calling function `transition_matrix_fn` with input action `a`
 
     2- Chooses a state randomly (based on probabilities from *self*.transition_matrix)
 
@@ -96,7 +96,7 @@ the agents are from each other, the less is the weight assignedto the edge conne
     `jointaction`
     
 - `Render()`:
-visualize the actions of the agents and the transition of the target in the environment. The agents are represented by military airplanes. These airplanes shoot the enemy UFO (the moving target) as it transitions around the grid.
+visualize the actions of the agents and the transition of the target in the environment. The agents are represented by sensors. These sensors send narrow sector jamming beam towards the location estimate of the target intruder drone. However, upon applying those signals, the drone detects energy abnormalities and transitions into another location by favoring locations that are far from the jamming signal. The joint action taken by the sensors is represented by a noisy signal.
 
 - `Reset(centralized)`:
   - **Input**:
