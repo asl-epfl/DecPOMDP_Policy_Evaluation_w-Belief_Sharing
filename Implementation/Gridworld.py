@@ -353,8 +353,8 @@ class GridWorld:
             ax.add_artist(ab) 
  
 
-        temp_x = (self.jointaction[0]-0.5)/self.height
-        temp_y = (self.jointaction[1] -0.5)/self.width
+        temp_x = abs(self.jointaction[0]-0.5)/self.height
+        temp_y = abs(self.jointaction[1]-0.5)/self.width
 
         xy = (temp_x,temp_y)
         arr_img = plt.imread("signal.png")
@@ -367,8 +367,8 @@ class GridWorld:
         ax.add_artist(ab)
         ax.axis('off') 
         
-        temp_x = (self.target_posx-0.5)/self.height
-        temp_y = (self.target_posy-0.5 )/self.width
+        temp_x = abs(self.target_posx-0.5)/self.height
+        temp_y = abs(self.target_posy-0.5)/self.width
 
         xy = (temp_x,temp_y)
         arr_img = plt.imread("drone.png")
