@@ -1,7 +1,7 @@
 """
 Implementation code for the paper: Policy Evaluation in Decentralized POMDPs with Belief Sharing
 
-Documentation: https://github.com/asl-epfl/Policy-Evaluation-in-Decentralized-POMDPs-with-Belief-Sharing./
+Documentation: https://github.com/asl-epfl/Policy-Evaluation-in-Decentralized-POMDPs-with-Belief-Sharing/
 
 Fatima Ghadieh - 2023
 """
@@ -344,7 +344,7 @@ class GridWorld:
             temp_x = L.posx
             temp_y = L.posy
             xy = ((temp_x-0.5)/self.width ,(temp_y-0.5)/self.height)
-            arr_img = plt.imread("satellite.png")
+            arr_img = plt.imread("sensor.png")
             imagebox = OffsetImage(arr_img, zoom=0.4) 
             imagebox.image.axes = ax
 
