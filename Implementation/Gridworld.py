@@ -331,8 +331,8 @@ class GridWorld:
      
     def Render(self): 
          
-        fig, ax = plt.subplots()
-        plt.rcParams["figure.figsize"] = (10,10)
+       fig, ax = plt.subplots()
+        plt.rcParams["figure.figsize"] = (9,9)
         xy = (0.5,0.5)
         arr_img = plt.imread("background.jpg")
         imagebox = OffsetImage(arr_img, zoom=1)
@@ -343,9 +343,9 @@ class GridWorld:
         for L in self.ListofAgents:
             temp_x = L.posx
             temp_y = L.posy
-            xy = (temp_x/self.width ,(temp_y)/self.height)
+            xy = ((temp_x)/self.width ,(temp_y)/self.height)
             arr_img = plt.imread("satellite.png")
-            imagebox = OffsetImage(arr_img, zoom=0.3) 
+            imagebox = OffsetImage(arr_img, zoom=0.4) 
             imagebox.image.axes = ax
 
             ab = AnnotationBbox(imagebox, xy,frameon = False)
@@ -356,9 +356,9 @@ class GridWorld:
         temp_y = (self.jointaction[1] )/self.width
 
         xy = (temp_x,temp_y)
-        arr_img = plt.imread("shot.png")
+        arr_img = plt.imread("signal.png")
 
-        imagebox = OffsetImage(arr_img, zoom=0.3)
+        imagebox = OffsetImage(arr_img, zoom=0.4)
         imagebox.image.axes = ax
 
         ab = AnnotationBbox(imagebox, xy,frameon = False)
@@ -382,7 +382,7 @@ class GridWorld:
         fig.savefig("render.jpg",dpi = 300)
         plt.close(fig)
         time.sleep(10) 
-        return 
+        return
     
     def reset(self,centralized): 
         print("reset")
