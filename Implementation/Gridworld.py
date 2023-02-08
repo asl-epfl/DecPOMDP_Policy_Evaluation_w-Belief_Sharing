@@ -1,7 +1,7 @@
 """
 Implementation code for the paper: Policy Evaluation in Decentralized POMDPs with Belief Sharing
 
-Documentation: https://github.com/asl-epfl/Policy-Evaluation-in-Decentralized-POMDPs-with-Belief-Sharing/
+Documentation: https://github.com/asl-epfl/DecPOMDP_Policy_Evaluation_w-Belief_Sharing/
 
 Fatima Ghadieh - 2023
 """
@@ -353,13 +353,13 @@ class GridWorld:
             ax.add_artist(ab) 
  
 
-        temp_x = abs(self.jointaction[0]-0.5)/self.height
-        temp_y = abs(self.jointaction[1]-0.5)/self.width
+        temp_x = (self.jointaction[0]+0.5)/self.height
+        temp_y = (self.jointaction[1]+0.5)/self.width
 
         xy = (temp_x,temp_y)
         arr_img = plt.imread("signal.png")
 
-        imagebox = OffsetImage(arr_img, zoom=0.4)
+        imagebox = OffsetImage(arr_img, zoom=0.2)
         imagebox.image.axes = ax
 
         ab = AnnotationBbox(imagebox, xy, xycoords = 'figure fraction',frameon = False)
@@ -367,12 +367,12 @@ class GridWorld:
         ax.add_artist(ab)
         ax.axis('off') 
         
-        temp_x = abs(self.target_posx-0.5)/self.height
-        temp_y = abs(self.target_posy-0.5)/self.width
+        temp_x = (self.target_posx+0.5)/self.height
+        temp_y = (self.target_posy+0.5)/self.width
 
         xy = (temp_x,temp_y)
         arr_img = plt.imread("drone.png")
-        imagebox = OffsetImage(arr_img, zoom=1) 
+        imagebox = OffsetImage(arr_img, zoom=0.6) 
         imagebox.image.axes = ax 
         ab = AnnotationBbox(imagebox, xy,xycoords = 'figure fraction',frameon = False)
         ax.set_xlim(0, 1)
@@ -548,7 +548,7 @@ class GridWorld:
 
  
 beliefvectors = []
-#Parameters
+#Parameters used in the experiments for the paper
 height = 10
 width  = height
 num = 8
