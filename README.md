@@ -55,10 +55,12 @@ Use `step(centralized)` method from the Gridworld class to get the next time ste
 Use the `Render()` method from the Gridworld class to visualize the actions of the agents and the transition of the target in the environment. As rendered below, the agents are represented by sensors. These sensors aim to localize a spy drone as it moves around the grid.  Actions taken by the sensors are represented as noisy signals that aim to disrupt the communication between the intruder drone and its owner.
 
 <p align="center">
-<img src = "https://user-images.githubusercontent.com/80005419/216824175-30056460-fd53-40a7-8e33-7d8b800c1631.jpg" width="500" height="500">
-</p>
+<img src = "https://user-images.githubusercontent.com/80005419/217651585-c2e323b3-33f1-410e-8242-5fdab5d91e41.jpg" width="500" height="500">
+</p> 
+
 
 ## Paper citation
+
 
 If you used this environment for your experiments or found it helpful, consider citing the following paper:
  
