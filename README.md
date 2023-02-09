@@ -3,7 +3,7 @@
 Multi-agent grid world environment with partial observability and a discrete action space. In this environment, agents (e.g., radar sensors) exploit their communication network in order to track a moving target (e.g., an intruder drone). The target moves randomly according to a pre-defined transition model that takes the actions (i.e., hits) of agents into account. 
 
 Used in the paper [Policy Evaluation in Decentralized
-POMDPs with Belief Sharing](https://arxiv.org/).
+POMDPs with Belief Sharing](https://arxiv.org/abs/2302.04151).
 
 ## Getting started:
  
