@@ -65,10 +65,10 @@ Use the `Render()` method from the Gridworld class to visualize the actions of t
 If you used this environment for your experiments or found it helpful, consider citing the following paper:
  
 <pre>
-@article{,
+@article{kayaalp2023_policy,
   title={Policy Evaluation in Decentralized POMDPs with Belief Sharing},
-  author={M. Kayaalp, F. Ghadieh, and A. H. Sayed},
-  journal={},
+  author={Kayaalp, Mert and Ghadieh, Fatima and Sayed, Ali H.},
+  journal={arXiv:2302.04151},
   year={2023}
 }
 </pre>
