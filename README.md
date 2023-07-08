@@ -3,7 +3,7 @@
 Multi-agent grid world environment with partial observability and a discrete action space. In this environment, agents (e.g., radar sensors) exploit their communication network in order to track a moving target (e.g., an intruder drone). The target moves randomly according to a pre-defined transition model that takes the actions (i.e., hits) of agents into account. 
 
 Used in the paper [Policy Evaluation in Decentralized
-POMDPs with Belief Sharing](https://arxiv.org/abs/2302.04151).
+POMDPs with Belief Sharing](https://ieeexplore.ieee.org/abstract/document/10129007).
 
 ## Getting started:
  
@@ -65,11 +65,14 @@ Use the `Render()` method from the Gridworld class to visualize the actions of t
 If you used this environment for your experiments or found it helpful, consider citing the following paper:
  
 <pre>
-@article{kayaalp2023_policy,
-  title={Policy Evaluation in Decentralized POMDPs with Belief Sharing},
+ @ARTICLE{kayaalp2023_policy,
   author={Kayaalp, Mert and Ghadieh, Fatima and Sayed, Ali H.},
-  journal={arXiv:2302.04151},
-  year={2023}
-}
+  journal={IEEE Open Journal of Control Systems}, 
+  title={Policy Evaluation in Decentralized POMDPs With Belief Sharing}, 
+  year={2023},
+  volume={2},
+  number={},
+  pages={125-145},
+  doi={10.1109/OJCSYS.2023.3277760}}
 </pre>
 
