@@ -1,9 +1,11 @@
-# Policy Evaluation in Decentralized POMDPs with Belief Sharing.
+# Policy Evaluation in Decentralized POMDPs with Belief Sharing [![DOI](https://zenodo.org/badge/594755668.svg)](https://zenodo.org/badge/latestdoi/594755668)
 
 Multi-agent grid world environment with partial observability and a discrete action space. In this environment, agents (e.g., radar sensors) exploit their communication network in order to track a moving target (e.g., an intruder drone). The target moves randomly according to a pre-defined transition model that takes the actions (i.e., hits) of agents into account. 
 
 Used in the paper [Policy Evaluation in Decentralized
-POMDPs with Belief Sharing](https://ieeexplore.ieee.org/abstract/document/10129007).
+POMDPs with Belief Sharing](https://ieeexplore.ieee.org/abstract/document/10129007): 
+
+M. Kayaalp, F. Ghadieh and A. H. Sayed, "Policy Evaluation in Decentralized POMDPs With Belief Sharing," in IEEE Open Journal of Control Systems, vol. 2, pp. 125-145, 2023, doi: 10.1109/OJCSYS.2023.3277760.
 
 ## Getting started:
  
